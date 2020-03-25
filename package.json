@@ -1,0 +1,24 @@
+{
+  "name": "helping_hand",
+  "version": "1.0.0",
+  "description": "Project for HackCovid19",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tezansahu/HackCovid19_Project.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "HackCovid19",
+    "Solidity"
+  ],
+  "author": "Tezan Sahu, R. Nambilakshmi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tezansahu/HackCovid19_Project/issues"
+  },
+  "homepage": "https://github.com/tezansahu/HackCovid19_Project#readme"
+}
