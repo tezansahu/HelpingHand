@@ -1,0 +1,1 @@
+const helpingHand_json = require('../blockchain/build/contracts/HelpingHand.json');
