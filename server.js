@@ -1,10 +1,7 @@
 const express = require('express');
 
 const web3_utils = require('./web3/utils');
-// const DAI = require('./test/DAI');
-// const daiToZkDai = require('./test/daiToZk');
-
-
+const web3_helpingHands = require("./web3/helpingHands");
 const app = express()
 
 app.all('/*', function(req, res, next) {
@@ -18,60 +15,41 @@ app.get('/', (req,res) => {
 })
 
 app.get('/ethBalance', (req,res) => {
-    web3_utils.getBalance(req.query.accountIndex, (bal) => {
+    web3_utils.getBalance(req.query.address, (bal) => {
         res.send(bal);
     })
 })
-// app.get('/ethBalanceDai', (req,res) => {
-//     DAI.getBalance(req.query.accountIndex, (bal) => {
-//         res.send(bal);
-//     })
-// })
 
-// app.get('/ethToDai', (req,res) => {
-//     DAI.mintDAI(req.query.amount, req.query.eth, (txHash) => {
-//         res.send(txHash);
-//     })
-// })
-
-// app.get('/ethToDai2', (req,res) => {
-//     DAI.mintDAI2(req.query.amount, (txHash) => {
-//         res.send(txHash);
-//     })
-// })
-
-// app.get('/daiToZkDai', (req,res) => {
-//     daiToZkDai.convertToZk(req.query.amount, (note) => {
-//         res.send(note);
-//     })
-// })
-// app.get('/daiToZkDai2', (req,res) => {
-//     daiToZkDai.convertToZk3(req.query.amount, (note) => {
-//         res.send(note);
-//     })
-// })
-// app.get('/ZkDaiTock', (req,res) => {
-//     daiToZkDai.convertToZk2(req.query.amount, (note) => {
-//         res.send(note);
-//     })
-// })
-
-// app.get('/ZkDaiTock2', (req,res) => {
-//     daiToZkDai.convertToZk4(req.query.amount, (note) => {
-//         res.send(note);
-//     })
-// })
-
-app.get('/addDai', (req,res) => {
-    DAI.mintDAI(req.query.amount, (tx) => {
-        res.send(tx);
+app.get('/createCause', (req, res) => {
+    web3_helpingHands.createCause(req.query.address, req.query.requirement, (txHash) => {
+        res.send(txHash);
     })
 })
-app.get('/recoverDAI', (req,res) => {
-    DAI.minDAI(req.query.amount, (tx) => {
-        res.send(tx);
+
+app.get('/donate', (req, res) => {
+    web3_helpingHands.donate(req.query.address, req.query.id, req.query.amt, (txHash) => {
+        res.send(txHash);
     })
 })
+
+app.get('/withdraw', (req, res) => {
+    web3_helpingHands.withdraw(req.query.address, req.query.id, (txHash) => {
+        res.send(txHash);
+    })
+})
+
+app.get('/tip', (req, res) => {
+    web3_helpingHands.tip(req.query.address, req.query.volunteer, req.query.amt, (txHash) => {
+        res.send(txHash);
+    })
+})
+
+app.get('/getCauseDetails', (req, res) => {
+    web3_helpingHands.getCauseDetails(req.query.address, req.query.volunteer, req.query.amt, (details) => {
+        res.send(details);
+    })
+})
+
 app.listen(3000, () => {
     console.log(`Server Started at 3000`);
 })
