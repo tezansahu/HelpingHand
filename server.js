@@ -21,8 +21,8 @@ app.get('/ethBalance', (req,res) => {
 })
 
 app.get('/createCause', (req, res) => {
-    web3_helpingHands.createCause(req.query.address, req.query.requirement, (txHash) => {
-        res.send(txHash);
+    web3_helpingHands.createCause(req.query.address, req.query.requirement, (id, txHash) => {
+        res.send({"id":id, "txHash":txHash});
     })
 })
 

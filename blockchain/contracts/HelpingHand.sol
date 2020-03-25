@@ -27,15 +27,16 @@ contract HelpingHand{
         owner = msg.sender;
     }
 
-    function createCause(uint256 _req) public {
+    function createCause(uint256 _req) public returns (uint256){
         counter++;
         cause_exists[counter] = true;
         causes[counter] = Cause({id: counter, creator: msg.sender, requirement: _req, donated: 0, withdrawn: 0});
         
         emit NewCause(counter, msg.sender, _req);
+        return counter;
     }
     
-    function donate(uint256 _id) payable public {
+    function donate(uint256 _id) public payable{
         require(msg.value != 0, "Can't donate 0 ETH");
         require(cause_exists[_id], "Cause for donation does not exist");
         require(!cause_fulfilled[_id], "Cause for donation has already been fulfilled");
