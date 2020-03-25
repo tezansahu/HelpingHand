@@ -1953,8 +1953,18 @@ ul.tabs-nav .tab-nav.active {
     line-height: 1;
 }
 
+.contact-form select{
+    width: 100%;
+    padding: 2px 24px;
+    margin-bottom: 18px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 1;
+}
+
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
+.contact-form select:focus
 .contact-form textarea:focus {
     outline: none;
 }
@@ -1973,6 +1983,59 @@ ul.tabs-nav .tab-nav.active {
 
 .contact-form input[type="submit"] {
     cursor: pointer;
+}
+
+.contact-form .radio-label {
+    display : block;
+}
+
+.contact-form .radio-label > input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+}
+
+.contact-form .payment-type input[type="radio"] {
+    visibility: hidden;
+    position: absolute;
+}
+
+.contact-form .payment-type label {
+    position: relative;
+    margin-right: 40px;
+    font-size: 14px;
+    line-height: 1;
+    color: #6a6a6a;
+}
+
+.contact-form .payment-type input[type="radio"] + .payment-type-radio {
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.contact-form .payment-type input[type="radio"] + .payment-type-radio + .centered-dot {
+    visibility: hidden;
+    display: block;
+    position: absolute;
+    left: 7px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #ff5e06;
+}
+
+.contact-form .payment-type input[type="radio"]:checked + .payment-type-radio {
+    border-color: #ff5e06;
+}
+
+
+.contact-form .payment-type input[type="radio"]:checked + .payment-type-radio + .centered-dot {
+    visibility: visible;
 }
 
 .contact-page .contact-gmap {

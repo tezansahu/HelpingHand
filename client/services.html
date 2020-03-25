@@ -7,6 +7,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link rel="shortcut icon" href="./images/help_logo.png">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -24,6 +26,8 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 </head>
 <body class="single-page about-page">
 
@@ -94,26 +98,45 @@
             </div><!-- .row -->
         </div><!-- .container -->
     </div><!-- .page-header -->
-
+    
     <div class="contact-page-wrap">
+        
         <div class="container">
             <div class="row">
                 <div class="col-12 col-lg-12">
-                    <form class="contact-form">
-                        <input type="text" placeholder="Name">
-                        <input type="email" placeholder="Email">
-                        <textarea rows="15" cols="6" placeholder="Messages"></textarea>
+                    <h4 style="margin:20pt; text-align:center"><b>Fill the Form to Avail Assistance during COVID-19</b></h4>
+                    <form class="contact-form" style="margin-top:20pt">
+                        <h4 style="padding-bottom: 5pt;">Personal Details:</h4>
+
+                        <input id="service_name" type="text" placeholder="Name">
+
+                        <input id="service_addr" type="text" placeholder="Residential Address">
+                        
+                        <h4 style="padding-bottom: 5pt; padding-top: 10pt">Details for Assistance:</h4>
+
+                         <select class="form-control service_type" id="service_type">
+                            <option selected disabled>Type of Service:</option>
+                            <option value="Medicines">Medicines</option>
+                            <option value="Physical Assistance">Physical Assistance</option>
+                            <option value="Daily Essentials">Daily Essentials</option>
+                        </select>
+
+                        <textarea rows="15" cols="6" id="service_descr" placeholder="Description"></textarea>
+                        
+                        <span>
+                            <p class="service_note" id="service_note"></p>
+                        <span>
 
                         <span>
-                            <input class="btn gradient-bg" type="submit" value="Contact us">
+                            <input class="btn gradient-bg" type="submit" value="Submit" onClick="newAidNeeded()">
                         </span>
+
+                        
                     </form>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <footer class="site-footer">
         <div class="footer-widgets">
@@ -182,6 +205,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div><!-- .container -->
         </div><!-- .footer-bar -->
     </footer><!-- .site-footer -->
-
+    <script type='text/javascript' src='js/firebase.js'></script>
+    <script type='text/javascript' src='js/jquery.js'></script>
+    <script type='text/javascript' src='js/jquery.collapsible.min.js'></script>
+    <script type='text/javascript' src='js/swiper.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countdown.min.js'></script>
+    <script type='text/javascript' src='js/circle-progress.min.js'></script>
+    <script type='text/javascript' src='js/jquery.countTo.min.js'></script>
+    <script type='text/javascript' src='js/jquery.barfiller.js'></script>
+    <script type='text/javascript' src='js/custom.js'></script>
 </body>
 </html>

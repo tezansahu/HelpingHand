@@ -1,6 +1,6 @@
 let url = "http://127.0.0.1:3000";
 
-let firebaseConfig = {
+var firebaseConfig = {
     apiKey: "AIzaSyAao3z-m_bfaVk6LdAKn1CmOMkMmvFSFZk",
     authDomain: "helpinghand-tsrn.firebaseapp.com",
     databaseURL: "https://helpinghand-tsrn.firebaseio.com",
@@ -26,12 +26,13 @@ function doCall(url, callback){
 }
 
 function getBal(){
+    let addr;
     doCall(`${url}/ethBalance?address=${addr}`, (res) => {
         // Change necessary values
     })
 }
 
-getBal()
+// getBal()
 
 function createCause(){
     // Get value of variables
@@ -112,25 +113,27 @@ function retrieveAidsNeeded(){
     let database = firebase.database().ref('services/' + service_type);
     database.on('value', function(snapshot){
         snapshot.forEach(snap => {
-            // Fill in relevant place
+        
         })
     })
 }
 
+
 function newAidNeeded(){
-    let name;
-    let res_addr;
-    let descr;
-    let payment_mode;
-    let service_type;
-    firebase.database().ref('services/' + service_type).push({
-        id: Math.floor((Math.random() * 100000) + 1),
+    let name = document.getElementById("service_name").value;
+    let res_addr = document.getElementById("service_addr").value;
+    let descr = document.getElementById("service_descr").value;
+    // let payment_mode;
+    let service_type = document.getElementById("service_type").value;
+    console.log(name, res_addr, descr, service_type);
+
+
+    firebase.database().ref(`services/${service_type}`).push({
         name: name,
         res_addr: res_addr,
         descr: descr,
-        payment_mode: payment_mode,
         status: "Help Needed",
-    })
+    });
 }
 
 function matchAidWithVolunteer(){
