@@ -1158,7 +1158,7 @@ ul.tabs-nav .tab-nav.active {
 }
 
 .donate-page .page-header {
-    background: url(images/donate-bg.jpg) no-repeat center;
+    background: url(images/causes-bg.jpg) no-repeat center;
 }
 
 .donate-page .welcome-wrap {
@@ -2045,6 +2045,10 @@ ul.tabs-nav .tab-nav.active {
 }
 
 .contact-form input[type="submit"] {
+    cursor: pointer;
+}
+
+.donation-form input[type="submit"] {
     cursor: pointer;
 }
 

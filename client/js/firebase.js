@@ -79,7 +79,7 @@ function donate(){
         database.on('value', function(snapshot){
             snapshot.forEach(snap => {
                 if(JSON.parse(snap.val().id) == id) {
-                    new_donated = snap.val().donated + amt;
+                    new_donated = parseFloat(snap.val().donated) + parseFloat(amt);
                     let db = firebase.database().ref('causes/' + snap.key);
                     db.update({
                         donated: new_donated
@@ -140,20 +140,14 @@ function retrieveCauses(){
             document.getElementById("cause_1_descr").innerHTML = `<a href="#" style="text-decoration:none">${snap.val()["descr"]}</a>`;
             let percent = 100*snap.val()["donated"]/snap.val()["requirement"];
             document.getElementById("fund_raised_details").innerHTML = 
-                `<div class="featured-fund-raised-bar barfiller">
-                    <div class="tipWrap">
-                        <span class="tip"></span>
-                    </div>
-
-                    <span  class="fill" data-percentage="24"></span>
-                </div>
-                <div class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
+                `
+                <div style="margin-top:-10pt" class="fund-raised-details d-flex flex-wrap justify-content-between align-items-center">
                     <div class="fund-raised-total mt-4">
-                        Raised: ${snap.val()["donated"]} ETH
+                        <b>Raised:</b> ${snap.val()["donated"]} ETH
                     </div><!-- .fund-raised-total -->
 
                     <div class="fund-raised-goal mt-4">
-                        Requirement: ${snap.val()["requirement"]} ETH 
+                        <b>Requirement:</b> ${snap.val()["requirement"]} ETH 
                     </div>
                 </div>
                 <div class="fund-raised-details" style="text-align:center">   
