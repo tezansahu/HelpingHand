@@ -1157,6 +1157,35 @@ ul.tabs-nav .tab-nav.active {
     background: #ff5a00;
 }
 
+.donate-page .page-header {
+    background: url(images/donate-bg.jpg) no-repeat center;
+}
+
+.donate-page .welcome-wrap {
+    padding: 96px 0;
+}
+
+.donate-page .welcome-content .entry-title {
+    color: #262626;
+}
+
+@media screen and (max-width: 992px){
+    .donate-page .welcome-content .entry-title {
+        margin-top: 60px;
+    }
+}
+
+.donate-page .welcome-content .entry-content {
+    color: #929191;
+}
+
+.donate-page .welcome-wrap img {
+    display: block;
+    width: 100%;
+}
+
+
+
 .volunteer-page .page-header {
     background: url(images/volunteer-bg.jpg) no-repeat center;
 }

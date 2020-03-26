@@ -14,6 +14,12 @@ app.get('/', (req,res) => {
     res.send('HelpingHand API')
 })
 
+app.get('/address', (req,res) => {
+    web3_utils.getAddress(req.query.address, (addr) => {
+        res.send(addr);
+    })
+})
+
 app.get('/ethBalance', (req,res) => {
     web3_utils.getBalance(req.query.address, (bal) => {
         res.send(bal);
@@ -27,6 +33,7 @@ app.get('/createCause', (req, res) => {
 })
 
 app.get('/donate', (req, res) => {
+    console.log(req.query);
     web3_helpingHands.donate(req.query.address, req.query.id, req.query.amt, (txHash) => {
         res.send(txHash);
     })
