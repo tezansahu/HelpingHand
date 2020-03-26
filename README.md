@@ -9,7 +9,7 @@ In the current scenario of the world, given the outbreak of COVID-19, people are
 
 ### Our Solution: HelpingHand 
 
-HelpingHand is an interface that brifges the gap and brings together these people as it suggests, lends a hand, to fight this pandemic.
+HelpingHand is an interface that bridges the gap and brings together these people as it suggests, lends a hand, to fight this pandemic.
 
 ![github-small](/client/images/launchpage.png) 
 
