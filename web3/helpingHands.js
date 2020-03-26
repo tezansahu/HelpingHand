@@ -1,11 +1,13 @@
 const helpingHand_json = require('../blockchain/build/contracts/HelpingHand.json');
 
 const Web3 = require('web3');
-const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+// const web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+const web3 = new Web3(new Web3.providers.HttpProvider("https://testnet2.matic.network"))
 
 async function createCause(address, requirement, callback){
     console.log(address, requirement)
     let chainID  = await web3.eth.net.getId();
+
     console.log(chainID)
     let helpingHand_instance = new web3.eth.Contract(helpingHand_json.abi, helpingHand_json.networks[chainID]["address"]);
     let id = await helpingHand_instance.methods.createCause(web3.utils.toWei(requirement, "ether")).call({from: address});

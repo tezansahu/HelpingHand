@@ -26,14 +26,17 @@ $ git clone https://github.com/tezansahu/HelpingHand.git
 $ cd HelpingHand
 $ npm i
 
-# Follow the next step to run on local node
+# The contract has already been deployed to Matic Network [Address: 0x3f475bc8c794B86132EdbA04fB40c46f1E4dDeA3]
+
+# Follow these steps only if you want to deploy contract locally:
+####################################################################
+# [Optional]
 $ ganache-cli -m 'differ idle retire demise glare sentence glove hammer iron mango way empty'
 
-# On a new terminal
+# On a new terminal [Optional]
 $ cd HelpingHand/blockchain
 $ truffle migrate # To run on local node
-# Or, to run on Matic Network
-$ truffle migrate --network matic
+####################################################################
 
 # On a new terminal
 $ cd HelpingHand
