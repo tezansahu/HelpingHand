@@ -4,15 +4,10 @@
         $('.service_type').change(function(){
             var a = $(this).val();
             console.log(a)
-            if(a === "Medicines" || a === "Daily Essentials"){
+            if(a === "medicines" || a === "daily_essentials"){
                 var msg = `<i><b>Note:</b> You will have to provide the money for buying ${a} to the volunteer</i>`;
                 $('.service_note').html(msg); // selector for div
             }
-
-            if(a === "Medicines"){
-                $('#upload_file').style.display = block;
-            }
-            
         });
     });
 
