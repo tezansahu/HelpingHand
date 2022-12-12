@@ -23,7 +23,7 @@
   "homepage": "https://github.com/tezansahu/HackCovid19_Project#readme",
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.0.15",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "truffle-contract": "^4.0.31",
     "web3": "^1.0.0-beta.34"
   }
